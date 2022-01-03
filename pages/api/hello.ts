@@ -8,11 +8,11 @@ const handler = nc<NextApiRequest, NextApiResponse>({
     res.status(500).end("Something broke!");
   },
   onNoMatch: (req, res, next) => {
-    res.status(404).end("Page is not found");
+    res.status(404).end("Method is not allowed");
   },
 })
   .get((req, res) => {
-    res.send("Hello world");
+    res.send("Hello world from api");
   })
   .post((req, res) => {
     res.json({ hello: "world" });
